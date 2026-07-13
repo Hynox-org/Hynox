@@ -86,27 +86,27 @@ export default function EndToEndEcommercePage() {
           {/* Radial gradient overlay */}
           <div className="absolute inset-0 z-[1] pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(20,35,100,0.25) 0%, rgba(5,5,5,0.65) 75%)" }} />
 
-          <div className="hero-split-content" style={{ zIndex: 2, paddingTop: '0', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1200px', margin: '0 auto', width: '100%', gap: '4rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
+          <div className="hero-split-content lg:-mt-24" style={{ zIndex: 2, paddingTop: '1rem', paddingBottom: '4rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', maxWidth: '1200px', margin: '0 auto', width: '100%', gap: '3rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
             
-            <div style={{ flex: '1 1 500px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', paddingLeft: '0', marginLeft: '-1.5rem', marginTop: '-10rem' }}>
+            <div style={{ flex: '1 1 min(100%, 500px)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left' }}>
               <span className="hero-badge reveal-fade-in">
                 COMPLETE E-COMMERCE GROWTH ENGINE
               </span>
 
-              <h1 className="hero-center-h1 reveal-fade-in reveal-delay-100" style={{ textAlign: 'left', fontSize: 'clamp(2rem, 4vw, 3.2rem)', lineHeight: '1.2' }}>
+              <h1 className="hero-center-h1 reveal-fade-in reveal-delay-100" style={{ textAlign: 'left', fontSize: 'clamp(2rem, 8vw, 3.2rem)', lineHeight: '1.2', marginTop: '1rem' }}>
                 Build, Market &amp;<br />
                 <span className="svc-hero-accent-bw">Scale Your Brand</span>
               </h1>
 
-              <p className="hero-center-p reveal-fade-in reveal-delay-200" style={{ textAlign: 'left', maxWidth: '100%', marginLeft: 0 }}>
+              <p className="hero-center-p reveal-fade-in reveal-delay-200" style={{ textAlign: 'left', maxWidth: '100%', marginLeft: 0, marginTop: '1rem' }}>
                 From setting up your online store to running profitable Meta and Google ads, we provide everything you need to build a successful D2C brand from scratch.
               </p>
 
-              <div className="hero-center-actions reveal-fade-in reveal-delay-300" style={{ justifyContent: 'flex-start' }}>
+              <div className="hero-center-actions reveal-fade-in reveal-delay-300" style={{ justifyContent: 'flex-start', marginTop: '1rem' }}>
                 <a href="/contact" className="btn btn-hero-solid">Scale Your Brand <ArrowRight size={16} style={{ marginLeft: "4px", display: "inline-block", verticalAlign: "middle" }} /></a>
               </div>
 
-              <div className="svc-hero-badges-bw reveal-fade-in reveal-delay-400" style={{ justifyContent: 'flex-start', marginTop: '2.5rem', gap: '1rem' }}>
+              <div className="svc-hero-badges-bw reveal-fade-in reveal-delay-400" style={{ justifyContent: 'flex-start', marginTop: '2.5rem', gap: '1rem', flexWrap: 'wrap' }}>
                 <span>✓ Store Setup</span>
                 <span>✓ Ad Campaigns</span>
                 <span>✓ UGC Content</span>
@@ -114,8 +114,8 @@ export default function EndToEndEcommercePage() {
               </div>
             </div>
 
-            <div style={{ flex: '1 1 550px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '-6rem' }} className="reveal-fade-in reveal-delay-200">
-              <img src="/images/teerex_web.png" alt="End-to-End Ecommerce" style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', transform: 'scale(1.1)' }} />
+            <div style={{ flex: '1 1 min(100%, 550px)', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '-2rem' }} className="reveal-fade-in reveal-delay-200">
+              <img src="/images/teerex_web.png" alt="End-to-End Ecommerce" style={{ width: '100%', maxWidth: '600px', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }} />
             </div>
 
           </div>
