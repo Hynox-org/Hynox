@@ -335,7 +335,7 @@ export default function Home() {
               <li>Product Shoots & UGC Video Creation</li>
               <li>Analytics, Tracking & Growth Monitoring</li>
             </ul>
-            <Link href="https://end-to-end-ecommerce.vercel.app/" target="_blank" rel="noopener noreferrer" className="business-link">Scale your brand <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></Link>
+            <Link href="/services/end-to-end-ecommerce" className="business-link">Scale your brand <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></Link>
           </div>
 
           <div className="business-card">
@@ -351,7 +351,7 @@ export default function Home() {
               <li>Real-time Analytics & Monitoring</li>
               <li>System Integration & API Infrastructure</li>
             </ul>
-            <Link href="/services/erp-software" className="business-link">Automate your business <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></Link>
+            <Link href="https://end-to-end-ecommerce.vercel.app/" target="_blank" rel="noopener noreferrer" className="business-link">Automate your business <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></Link>
           </div>
         </div>
       </section>
