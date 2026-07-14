@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HYNOX | #1 Software Development Company in Coimbatore, Tamil Nadu",
+  title: "HYNOX | Software Development Company in Coimbatore, Tamil Nadu",
   description:
     "HYNOX is the best software development company in Coimbatore, Tamil Nadu. We build custom software, websites, mobile apps (iOS & Android), ERP systems, Shopify stores, and Generative AI automation (ChatGPT, Claude, Gemini). Trusted by 15+ businesses across India, UK & Finland.",
   keywords: [
@@ -255,6 +256,7 @@ export default function RootLayout({
           </svg>
         </a>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }

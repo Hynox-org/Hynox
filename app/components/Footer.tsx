@@ -90,10 +90,6 @@ export default function Footer() {
           <Link href="/privacy-policy" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</Link>
           <span style={{ color: '#333' }}>|</span>
           <Link href="/terms-of-service" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</Link>
-          <span style={{ color: '#333' }}>|</span>
-          <Link href="/cancellation-and-refund" style={{ color: 'inherit', textDecoration: 'none' }}>Cancellation & Refund Policy</Link>
-          <span style={{ color: '#333' }}>|</span>
-          <Link href="/shipping-and-delivery" style={{ color: 'inherit', textDecoration: 'none' }}>Shipping & Delivery Policy</Link>
         </div>
       </div>
     </footer>
