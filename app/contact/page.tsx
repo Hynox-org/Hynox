@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Check, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { sendGAEvent } from '@next/third-parties/google';
 
 const countries = [
   { name: 'India', code: '+91', flag: '🇮🇳' },
@@ -62,6 +63,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    sendGAEvent('event', 'ads_conversion_Submit_lead_form_1', {
+      form_name: 'contact_page',
+    });
     
     try {
       const response = await fetch('/api/send-email', {
