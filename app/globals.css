@@ -193,6 +193,45 @@ body {
 .reveal-delay-500 { transition-delay: 500ms; }
 .reveal-delay-600 { transition-delay: 600ms; }
 
+/* ============================================
+   MOBILE OPTIMIZATIONS FOR ANIMATIONS
+   ============================================ */
+@media (max-width: 768px) {
+  /* Remove expensive blur filters on mobile */
+  .reveal-blur {
+    filter: none !important;
+  }
+  .is-hidden.reveal-blur {
+    filter: none !important;
+  }
+  .is-visible {
+    filter: none !important;
+  }
+  
+  /* Remove transition delays so content appears instantly when scrolling */
+  .reveal-delay-100,
+  .reveal-delay-200,
+  .reveal-delay-300,
+  .reveal-delay-400,
+  .reveal-delay-500,
+  .reveal-delay-600 {
+    transition-delay: 0ms !important;
+  }
+
+  /* Make animations significantly faster on mobile */
+  .reveal-on-scroll,
+  .reveal-fade-in,
+  .reveal-from-left,
+  .reveal-from-right,
+  .reveal-zoom,
+  .reveal-flip-x,
+  .reveal-blur,
+  .reveal-rotate,
+  .reveal-scale-up {
+    transition-duration: 0.35s !important;
+  }
+}
+
 /* Header & Nav */
 .header {
   display: flex;
@@ -4991,6 +5030,15 @@ body {
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-marquee-content-left {
+    animation-duration: 20s;
+  }
+  .clients-marquee-content-right {
+    animation-duration: 20s;
   }
 }
 
