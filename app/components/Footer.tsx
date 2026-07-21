@@ -79,8 +79,8 @@ export default function Footer() {
             </a>
           </div>
           <div className="contact-item">
-            <MapPin size={18} />
-            <span>Coimbatore, Tamil Nadu, India</span>
+            <MapPin size={18} style={{ flexShrink: 0, marginTop: '2px' }} />
+            <span style={{ lineHeight: '1.4' }}>3rd Floor, Sri Govindaraj Tower, 38/4, Father Randy St, R.S. Puram, Coimbatore, Tamil Nadu 641002</span>
           </div>
         </div>
       </div>

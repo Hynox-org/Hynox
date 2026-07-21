@@ -204,6 +204,26 @@ const roles = [
       'Negotiate terms, prepare detailed service contracts, and close sales',
       'Coordinate with technical teams to ensure seamless client onboarding'
     ]
+  },
+  {
+    title: 'Performance Marketing Specialist',
+    desc: 'Drive scalable growth through data-driven paid advertising campaigns across Meta, Google, and other platforms. Manage ad budgets, optimize conversions, and deliver measurable ROI for our clients.',
+    duration: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time',
+    stipend: 'Competitive Salary + Performance Incentives',
+    requirements: [
+      'Proven experience in managing high-budget Meta Ads and Google Ads campaigns',
+      'Strong analytical skills with proficiency in Google Analytics and tracking tools',
+      'Ability to interpret performance data and optimize campaigns for ROAS/CPA',
+      'Experience in A/B testing ad creatives, copy, and landing pages'
+    ],
+    responsibilities: [
+      'Strategize, execute, and manage paid acquisition campaigns across digital platforms',
+      'Continuously monitor, analyze, and optimize campaign performance metrics',
+      'Collaborate with creative and content teams to develop high-performing ad creatives',
+      'Prepare detailed performance reports and provide actionable insights'
+    ]
   }
 ];
 

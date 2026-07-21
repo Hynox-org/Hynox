@@ -393,7 +393,7 @@ export default function Home() {
               ].map((project, index) => (
                 <div className="work-card" key={index}>
                   <div className="work-card-image">
-                    <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={project.image} alt={project.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="work-card-content">
                     <span className={project.badgeClass}>{project.category}</span>
@@ -428,6 +428,7 @@ export default function Home() {
                 { name: "Kyto", category: "Textile", logo: "/images/kyto_logo.jpg" },
                 { name: "NSK", category: "Textile", logo: "/images/nsk_logo.jpg" },
                 { name: "JP Nets", category: "Textile", logo: "/images/jpnets_logo.jpg" },
+                { name: "Team3", category: "Interiors", logo: "/images/team3_logo.png" },
                 // Duplicate for infinite scroll
                 { name: "SugarStar", category: "Retail", logo: "/images/sugarstar_logo.jpg" },
                 { name: "West", category: "Textile", logo: "/images/West_logo.png" },
@@ -435,11 +436,12 @@ export default function Home() {
                 { name: "Teerex", category: "Textile", logo: "/images/teerex_logo.jpg" },
                 { name: "Kyto", category: "Textile", logo: "/images/kyto_logo.jpg" },
                 { name: "NSK", category: "Textile", logo: "/images/nsk_logo.jpg" },
-                { name: "JP Nets", category: "Textile", logo: "/images/jpnets_logo.jpg" }
+                { name: "JP Nets", category: "Textile", logo: "/images/jpnets_logo.jpg" },
+                { name: "Team3", category: "Interiors", logo: "/images/team3_logo.png" }
               ].map((client, index) => (
                 <div className="client-logo-item" key={index}>
                   <div className="client-logo-box">
-                    <img src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px' }} />
+                    <img src={client.logo} alt={client.name} loading="lazy" style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
                   </div>
                   <p className="client-logo-name">{client.name}</p>
                   <p className="client-logo-category">{client.category}</p>
@@ -470,7 +472,7 @@ export default function Home() {
               ].map((client, index) => (
                 <div className="client-logo-item" key={index}>
                   <div className="client-logo-box">
-                    <img src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px' }} />
+                    <img src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
                   </div>
                   <p className="client-logo-name">{client.name}</p>
                   <p className="client-logo-category">{client.category}</p>
