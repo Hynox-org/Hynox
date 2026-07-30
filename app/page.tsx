@@ -130,31 +130,31 @@ export default function Home() {
       <section className="global-reach">
         <span className="section-subtitle reveal-blur">GLOBAL REACH</span>
         <h2 className="reveal-on-scroll">Delivering from Coimbatore to the world</h2>
-        
+
         <div className="cards-grid">
           <div className="reach-card reveal-from-left reveal-delay-100">
             <div className="flag-box">
-              <img src="https://flagcdn.com/in.svg" alt="India Flag" className="card-flag" />
+              <img fetchPriority="high" src="https://flagcdn.com/in.svg" alt="India Flag" className="card-flag" />
             </div>
             <div className="reach-card-content">
               <h4>India</h4>
               <p>15+ clients across Tamil Nadu — textile brands, retail, travel & food businesses</p>
             </div>
           </div>
-          
+
           <div className="reach-card reveal-zoom reveal-delay-200">
             <div className="flag-box">
-              <img src="https://flagcdn.com/gb.svg" alt="UK Flag" className="card-flag" />
+              <img fetchPriority="high" src="https://flagcdn.com/gb.svg" alt="UK Flag" className="card-flag" />
             </div>
             <div className="reach-card-content">
               <h4>United Kingdom</h4>
               <p>Built Graaps clothing brand's online store targeting the UK market</p>
             </div>
           </div>
-          
+
           <div className="reach-card reveal-from-right reveal-delay-300">
             <div className="flag-box">
-              <img src="https://flagcdn.com/fi.svg" alt="Finland Flag" className="card-flag" />
+              <img fetchPriority="high" src="https://flagcdn.com/fi.svg" alt="Finland Flag" className="card-flag" />
             </div>
             <div className="reach-card-content">
               <h4>Finland</h4>
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       <section id="products" className="services-section" style={{ paddingBottom: '2rem' }}>
-        <div className="services-header reveal-blur">  
+        <div className="services-header reveal-blur">
           <span className="section-subtitle">OUR PRODUCTS</span>
           <h2>Digital Products & Platforms</h2>
           <p>Explore our proprietary systems built for modern businesses and institutions.</p>
@@ -173,9 +173,9 @@ export default function Home() {
 
         <div className="services-category reveal-from-left reveal-delay-100">
           <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-            
+
             <Link href="https://ai-learning-platform-wheat-two.vercel.app/" target="_blank" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Hynox AI Campus" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Hynox AI Campus" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-ai">Platform</span>
                 <h4>Hynox AI Campus</h4>
@@ -183,9 +183,9 @@ export default function Home() {
                 <div className="service-link">Know More <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></div>
               </div>
             </Link>
-            
+
             <Link href="/contact" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Checkout" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Checkout" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev">E-Commerce</span>
                 <h4>Shopify Checkout</h4>
@@ -193,9 +193,9 @@ export default function Home() {
                 <div className="service-link">Know More <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></div>
               </div>
             </Link>
-            
+
             <Link href="/contact" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Healthcare Card System" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Healthcare Card System" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev" style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)' }}>Healthcare</span>
                 <h4>Healthcare Card System</h4>
@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       <section id="services" className="services-section">
-        <div className="services-header reveal-blur">  
+        <div className="services-header reveal-blur">
           <span className="section-subtitle">OUR SERVICES</span>
           <h2>Software &amp; Digital Services in Coimbatore</h2>
           <p>Custom software development and digital marketing services. Design, development, and marketing — all under one roof.</p>
@@ -219,7 +219,7 @@ export default function Home() {
           <h3 className="category-title">BUILD</h3>
           <div className="services-grid">
             <Link href="/services/website-development" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Website Development" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Website Development" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev">Development</span>
                 <h4>Website Development</h4>
@@ -228,7 +228,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/mobile-apps" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop" alt="Mobile Apps" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop" alt="Mobile Apps" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev">Development</span>
                 <h4>Mobile Apps</h4>
@@ -237,7 +237,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/erp-software" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Custom Software & ERP" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Custom Software & ERP" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev">Development</span>
                 <h4>Custom Software & ERP</h4>
@@ -246,7 +246,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/shopify-stores" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="/images/shopify_logo_thumbnail.png" alt="Shopify Stores" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="/images/shopify_logo_thumbnail.png" alt="Shopify Stores" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-dev">Development</span>
                 <h4>Shopify Stores</h4>
@@ -255,7 +255,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/ai-solutions" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop" alt="AI/ML Solutions" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop" alt="AI/ML Solutions" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-ai">AI/ML</span>
                 <h4>AI/ML Solutions</h4>
@@ -284,7 +284,7 @@ export default function Home() {
           <h3 className="category-title">GROW</h3>
           <div className="services-grid">
             <Link href="/services/performance-marketing" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Performance Marketing" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Performance Marketing" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-marketing">Marketing</span>
                 <h4>Performance Marketing</h4>
@@ -293,7 +293,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/social-media-marketing" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" alt="Social Media Marketing" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop" alt="Social Media Marketing" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-marketing">Marketing</span>
                 <h4>Social Media Marketing</h4>
@@ -302,7 +302,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href="/services/photography-and-videography" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img src="/images/ugc_video_creation_thumbnail.png" alt="Photography & Videography" className="service-card-image" loading="lazy" />
+              <img fetchPriority="high" src="/images/ugc_video_creation_thumbnail.png" alt="Photography & Videography" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-content">Content</span>
                 <h4>Photography & Videography</h4>
@@ -377,11 +377,6 @@ export default function Home() {
                 { title: "Kido Care", category: "Kids Clothing Brand", badgeClass: "badge-ai", desc: "Online clothing store", image: "/images/kido_care_web.jpg" },
                 { title: "Sun Holidays", category: "Tours and Travel Agency", badgeClass: "badge-content", desc: "Travel Agency Portfolio", image: "/images/sun_holidays_web.png" },
                 { title: "Livinza", category: "Interior Business", badgeClass: "badge-content", desc: "Interior Business Portfolio", image: "/images/livinza_web.png" },
-                // Duplicate for infinite scroll
-                { title: "SugarStar", category: "Shopify Development", badgeClass: "badge-dev", desc: "Premium confectionery online store", image: "/images/sugarstar_web.jpeg" },
-                { title: "JP Interiors App", category: "App Development", badgeClass: "badge-dev", desc: "Custom business automation and project management app", image: "/images/JpApp_works.png" },
-                { title: "Team3 Associates", category: "Custom Development", badgeClass: "badge-dev", desc: "Interior Design and Project Execution", image: "/images/team3_web.png" },
-                { title: "JP Interiors Web", category: "Web Development", badgeClass: "badge-dev", desc: "Interior design portfolio and service showcase", image: "/images/JpWeb_works.png" },
                 { title: "Teerex", category: "Custom Development", badgeClass: "badge-dev", desc: "E-commerce platform with custom features", image: "/images/teerex_web.png" },
                 { title: "Mallika Garments", category: "Custom Development", badgeClass: "badge-dev", desc: "Fashion retail business solution", image: "/images/malika-garments_web.jpg" },
                 { title: "Graaps", category: "Clothing Brand", badgeClass: "badge-marketing", desc: "Online clothing store", image: "/images/graaps_web.png" },
@@ -389,11 +384,12 @@ export default function Home() {
                 { title: "Kores Fabrics", category: "Clothing Brand", badgeClass: "badge-marketing", desc: "Online clothing Wholesale Store", image: "/images/kores_web.png" },
                 { title: "Kido Care", category: "Kids Clothing Brand", badgeClass: "badge-ai", desc: "Online clothing store", image: "/images/kido_care_web.jpg" },
                 { title: "Sun Holidays", category: "Tours and Travel Agency", badgeClass: "badge-content", desc: "Travel Agency Portfolio", image: "/images/sun_holidays_web.png" },
-                { title: "Livinza", category: "Interior Business", badgeClass: "badge-content", desc: "Interior Business Portfolio", image: "/images/livinza_web.png" }
+                { title: "Livinza", category: "Interior Business", badgeClass: "badge-content", desc: "Interior Business Portfolio", image: "/images/livinza_web.png" },
+                { title: "Twinstar", category: "Web Development", badgeClass: "badge-dev", desc: "Professional Web Platform", image: "/images/twinstar_web.jpeg" }
               ].map((project, index) => (
                 <div className="work-card" key={index}>
                   <div className="work-card-image">
-                    <img src={project.image} alt={project.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img fetchPriority="high" src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div className="work-card-content">
                     <span className={project.badgeClass}>{project.category}</span>
@@ -429,6 +425,7 @@ export default function Home() {
                 { name: "NSK", category: "Textile", logo: "/images/nsk_logo.jpg" },
                 { name: "JP Nets", category: "Textile", logo: "/images/jpnets_logo.jpg" },
                 { name: "Team3", category: "Interiors", logo: "/images/team3_logo.png" },
+                { name: "Twinstar", category: "Manufacturing", logo: "/images/twinstar_logo.jpg" },
                 // Duplicate for infinite scroll
                 { name: "SugarStar", category: "Retail", logo: "/images/sugarstar_logo.jpg" },
                 { name: "West", category: "Textile", logo: "/images/West_logo.png" },
@@ -437,11 +434,12 @@ export default function Home() {
                 { name: "Kyto", category: "Textile", logo: "/images/kyto_logo.jpg" },
                 { name: "NSK", category: "Textile", logo: "/images/nsk_logo.jpg" },
                 { name: "JP Nets", category: "Textile", logo: "/images/jpnets_logo.jpg" },
-                { name: "Team3", category: "Interiors", logo: "/images/team3_logo.png" }
+                { name: "Team3", category: "Interiors", logo: "/images/team3_logo.png" },
+                { name: "Twinstar", category: "Manufacturing", logo: "/images/twinstar_logo.jpg" }
               ].map((client, index) => (
                 <div className="client-logo-item" key={index}>
                   <div className="client-logo-box">
-                    <img src={client.logo} alt={client.name} loading="lazy" style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
+                    <img fetchPriority="high" src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
                   </div>
                   <p className="client-logo-name">{client.name}</p>
                   <p className="client-logo-category">{client.category}</p>
@@ -461,6 +459,7 @@ export default function Home() {
                 { name: "Kido Care", category: "Textile", logo: "/images/kido_care_logo.png" },
                 { name: "Sun Holidays", category: "Travel", logo: "/images/sun_holidays_logo.png" },
                 { name: "Livinza", category: "Interiors", logo: "/images/livinza_logo.png" },
+
                 // Duplicate for infinite scroll
                 { name: "Mallika Garments", category: "Textile", logo: "/images/mallika_garments_logo.jpg" },
                 { name: "NP Global Exports", category: "Textile", logo: "/images/npglobal_logo.jpg" },
@@ -469,10 +468,11 @@ export default function Home() {
                 { name: "Kido Care", category: "Textile", logo: "/images/kido_care_logo.png" },
                 { name: "Sun Holidays", category: "Travel", logo: "/images/sun_holidays_logo.png" },
                 { name: "Livinza", category: "Interiors", logo: "/images/livinza_logo.png" }
+
               ].map((client, index) => (
                 <div className="client-logo-item" key={index}>
                   <div className="client-logo-box">
-                    <img src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
+                    <img fetchPriority="high" src={client.logo} alt={client.name} style={{ backgroundColor: '#ffffff', padding: '10px', objectFit: 'contain', width: '100%', height: '100%' }} />
                   </div>
                   <p className="client-logo-name">{client.name}</p>
                   <p className="client-logo-category">{client.category}</p>
@@ -519,7 +519,7 @@ export default function Home() {
           <span className="section-subtitle">WHY HYNOX</span>
           <h2>Software Engineers &amp; Marketers in Coimbatore</h2>
         </div>
-        
+
         <div className="features-bento-grid reveal-on-scroll reveal-delay-200">
           {[
             { title: "Full stack team", icon: <Users size={24} />, desc: "Design, development and marketing — one team, one place, no middlemen. We handle the entire lifecycle of your product." },
@@ -550,7 +550,7 @@ export default function Home() {
           <div className="cta-card">
             <h2>Ready to build something?</h2>
             <p className="cta-subtitle">Tell us what you need — we'll get back to you within 24 hours.</p>
-            
+
             <div className="cta-buttons">
               <Link href="/contact" className="cta-btn primary" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                 Start a Project
