@@ -173,7 +173,7 @@ export default function PhotographyVideographyPage() {
             <span className="svc-label">PHOTOGRAPHY</span>
             <h2>Our Photography Work</h2>
           </div>
-          <div className="reveal-zoom" style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', padding: '0 1rem', WebkitOverflowScrolling: 'touch' }}>
+          <div style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', padding: '0 1rem', WebkitOverflowScrolling: 'touch' }}>
             {photographyPortfolio.map((item: any, i) => (
               <div key={i} style={{ flexShrink: 0, height: '350px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.1)' }}>
                 <Image
@@ -182,6 +182,7 @@ export default function PhotographyVideographyPage() {
                   width={800}
                   height={800}
                   priority
+                  unoptimized={true}
                   style={{ height: '100%', width: 'auto', objectFit: 'contain' }}
                 />
               </div>
@@ -201,7 +202,7 @@ export default function PhotographyVideographyPage() {
             <span className="svc-label">VIDEOGRAPHY</span>
             <h2>Our Videography Work</h2>
           </div>
-          <div className="social-portfolio-grid reveal-zoom">
+          <div className="social-portfolio-grid">
             {videographyPortfolio.map((item: any, i) => (
               <div className="social-portfolio-card" key={i}>
                 <div className="social-portfolio-img" style={{ width: '100%', height: '100%' }}>
