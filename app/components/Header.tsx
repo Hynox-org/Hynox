@@ -30,7 +30,7 @@ export default function Header() {
         <img src="/images/hynox_logo.jpg" alt="HYNOX" style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }} />
         <span>HYNOX</span>
       </Link>
-      
+
       <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle Menu">
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -55,7 +55,7 @@ export default function Header() {
           </Link>
         </div>
       </nav>
-      
+
       <div className="header-actions">
         <a href="https://voice.hynox.in/" target="_blank" rel="noopener noreferrer" className="btn btn-voice-ai">
           <Bot className="btn-icon" size={14} />

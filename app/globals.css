@@ -42,7 +42,7 @@ body {
 /* --- Keyframes --- */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(30px);
   }
 
@@ -54,7 +54,7 @@ body {
 
 @keyframes fadeInDown {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-20px);
   }
 
@@ -66,7 +66,7 @@ body {
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
@@ -101,17 +101,17 @@ body {
 /* --- Legacy utility classes --- */
 .animate-fade-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .animate-fade-down {
   animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .animate-fade-in {
   animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 .delay-100 {
@@ -155,7 +155,7 @@ body {
 
 /* --- Fade Up (default) --- */
 .reveal-on-scroll {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
@@ -163,13 +163,13 @@ body {
 
 /* --- Fade In (no movement) --- */
 .reveal-fade-in {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --- Slide from Left --- */
 .reveal-from-left {
-  opacity: 0;
+  opacity: 1;
   transform: translateX(-70px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
@@ -177,7 +177,7 @@ body {
 
 /* --- Slide from Right --- */
 .reveal-from-right {
-  opacity: 0;
+  opacity: 1;
   transform: translateX(70px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
@@ -185,7 +185,7 @@ body {
 
 /* --- Zoom In --- */
 .reveal-zoom {
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.82);
   transition: opacity 0.75s cubic-bezier(0.34, 1.56, 0.64, 1),
     transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -193,7 +193,7 @@ body {
 
 /* --- Flip on X axis --- */
 .reveal-flip-x {
-  opacity: 0;
+  opacity: 1;
   transform: perspective(600px) rotateX(25deg) translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -201,7 +201,7 @@ body {
 
 /* --- Blur in --- */
 .reveal-blur {
-  opacity: 0;
+  opacity: 1;
   filter: blur(12px);
   transform: translateY(20px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -211,7 +211,7 @@ body {
 
 /* --- Rotate in --- */
 .reveal-rotate {
-  opacity: 0;
+  opacity: 1;
   transform: rotate(-6deg) translateY(30px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
@@ -219,7 +219,7 @@ body {
 
 /* --- Scale up --- */
 .reveal-scale-up {
-  opacity: 0;
+  opacity: 1;
   transform: scale(0.95) translateY(20px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
     transform 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -426,7 +426,7 @@ body {
 
 @keyframes dynamicRevealWhite {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.6) rotateX(-60deg) translateY(40px);
     filter: blur(15px);
   }
@@ -444,7 +444,7 @@ body {
   }
 
   100% {
-    opacity: 0;
+    opacity: 1;
     transform: scale(1.4) rotateX(60deg) translateY(-40px);
     filter: blur(15px);
   }
@@ -457,7 +457,7 @@ body {
   }
 
   to {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
   }
 }
@@ -1680,7 +1680,7 @@ body {
 }
 
 .faq-q-btn svg {
-  opacity: 0;
+  opacity: 1;
   transform: translateX(-10px);
   transition: all 0.3s ease;
 }
@@ -1708,7 +1708,7 @@ body {
 
 @keyframes fadeSlideUp {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(10px);
   }
 
@@ -1769,7 +1769,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
   backdrop-filter: blur(4px);
 }
@@ -3159,7 +3159,7 @@ body {
 
 @keyframes modalFadeIn {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.95) translateY(10px);
   }
 
@@ -3195,7 +3195,7 @@ body {
 /* ── CASE STUDY PAGE ANIMATIONS ── */
 @keyframes cs-fadeUp {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(40px);
   }
 
@@ -3207,7 +3207,7 @@ body {
 
 @keyframes cs-fadeLeft {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(-40px);
   }
 
@@ -3219,7 +3219,7 @@ body {
 
 @keyframes cs-fadeRight {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(40px);
   }
 
@@ -3231,7 +3231,7 @@ body {
 
 @keyframes cs-scaleIn {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.92);
   }
 
@@ -3243,7 +3243,7 @@ body {
 
 @keyframes cs-fadeIn {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
@@ -3252,7 +3252,7 @@ body {
 }
 
 .cs-anim {
-  opacity: 0;
+  opacity: 1;
   animation-duration: 0.7s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-fill-mode: both;
@@ -3509,7 +3509,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -3532,7 +3532,7 @@ body {
 
 .checkbox-container input {
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
   height: 0;
   width: 0;
@@ -4331,7 +4331,7 @@ body {
 }
 
 .category-arrow {
-  opacity: 0;
+  opacity: 1;
   color: #ffffff;
   transition: all 0.2s ease;
   transform: translateX(-4px);
@@ -5561,7 +5561,7 @@ body {
 
 @keyframes sentinelFadeUp {
   0% {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     filter: blur(4px);
   }
@@ -5574,7 +5574,7 @@ body {
 }
 
 .animate-sentinel-fade-up {
-  opacity: 0;
+  opacity: 1;
   animation: sentinelFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
