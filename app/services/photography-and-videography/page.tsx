@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import CubesBackground from '../../components/CubesBackground';
 import ServiceCTA from '../../components/ServiceCTA';
 import Footer from '../../components/Footer';
+import Image from 'next/image';
 
 export default function PhotographyVideographyPage() {
   useEffect(() => {
@@ -32,39 +33,39 @@ export default function PhotographyVideographyPage() {
   }, []);
 
   const whatWeBuild = [
-    { icon: 'Camera',  title: 'Product Photography', desc: 'High-end e-commerce product shoots, lifestyle photography, and editorial campaigns for your brand.' },
-    { icon: 'Video',  title: 'UGC Video Creation', desc: 'Authentic User Generated Content (UGC) videos featuring creators to drive trust and conversions.' },
-    { icon: 'Clapperboard',  title: 'Commercials & Ads',  desc: 'High-budget look commercials, Meta Ads, and YouTube pre-rolls designed to sell.' },
-    { icon: 'Film',  title: 'Corporate Videography',   desc: 'Brand films, office tours, interviews, and company profile videos to build authority.' },
-    { icon: 'ImageIcon',  title: 'Social Media Reels',  desc: 'Fast-paced, aesthetic, and trending reels/shorts for Instagram, TikTok, and YouTube.' },
-    { icon: 'Plane',  title: 'Drone & Aerial Shoots', desc: 'Breathtaking 4K aerial videography for real estate, events, and large-scale manufacturing.' },
+    { icon: 'Camera', title: 'Product Photography', desc: 'High-end e-commerce product shoots, lifestyle photography, and editorial campaigns for your brand.' },
+    { icon: 'Video', title: 'UGC Video Creation', desc: 'Authentic User Generated Content (UGC) videos featuring creators to drive trust and conversions.' },
+    { icon: 'Clapperboard', title: 'Commercials & Ads', desc: 'High-budget look commercials, Meta Ads, and YouTube pre-rolls designed to sell.' },
+    { icon: 'Film', title: 'Corporate Videography', desc: 'Brand films, office tours, interviews, and company profile videos to build authority.' },
+    { icon: 'ImageIcon', title: 'Social Media Reels', desc: 'Fast-paced, aesthetic, and trending reels/shorts for Instagram, TikTok, and YouTube.' },
+    { icon: 'Plane', title: 'Drone & Aerial Shoots', desc: 'Breathtaking 4K aerial videography for real estate, events, and large-scale manufacturing.' },
   ];
 
   const whatYouGet = [
-    { icon: 'FileText', title: 'Creative Storyboarding',      desc: 'Detailed scene-by-scene planning before the shoot.' },
-    { icon: 'PenTool', title: 'Script & Concept',   desc: 'Engaging scripts written for both UGC and commercial videos.' },
-    { icon: 'Users', title: 'Talent & Creator Sourcing',        desc: 'We provide actors, models, and UGC creators for your videos.' },
-    { icon: 'Scissors', title: 'Cinematic Editing',  desc: 'Professional post-production, transitions, and pacing.' },
-    { icon: 'Aperture', title: 'Color Grading',    desc: 'Industry-standard color correction to make your footage pop.' },
-    { icon: 'Music', title: 'Commercial Audio Sync',    desc: 'Sound design and royalty-free music licensing included.' },
-    { icon: 'Folder', title: 'High-Res Delivery',      desc: 'Delivered in 4K or 1080p optimized for web, social, or TV.' },
-    { icon: 'Shield', title: 'Full Usage Rights',      desc: 'Complete digital rights to run the content anywhere.' },
+    { icon: 'FileText', title: 'Creative Storyboarding', desc: 'Detailed scene-by-scene planning before the shoot.' },
+    { icon: 'PenTool', title: 'Script & Concept', desc: 'Engaging scripts written for both UGC and commercial videos.' },
+    { icon: 'Users', title: 'Talent & Creator Sourcing', desc: 'We provide actors, models, and UGC creators for your videos.' },
+    { icon: 'Scissors', title: 'Cinematic Editing', desc: 'Professional post-production, transitions, and pacing.' },
+    { icon: 'Aperture', title: 'Color Grading', desc: 'Industry-standard color correction to make your footage pop.' },
+    { icon: 'Music', title: 'Commercial Audio Sync', desc: 'Sound design and royalty-free music licensing included.' },
+    { icon: 'Folder', title: 'High-Res Delivery', desc: 'Delivered in 4K or 1080p optimized for web, social, or TV.' },
+    { icon: 'Shield', title: 'Full Usage Rights', desc: 'Complete digital rights to run the content anywhere.' },
   ];
 
   const whyChoose = [
-    { title: 'In-House Production Team',     desc: 'We do not outsource. Our in-house directors, DPs, and editors handle everything.' },
-    { title: 'Specialized UGC Wing',     desc: 'We have a dedicated division just for sourcing creators and shooting high-converting UGC.' },
-    { title: 'Cinema-Grade Equipment',         desc: 'Shot on top-tier cameras (Sony Cinema Line, RED) with professional lighting and audio.' },
-    { title: 'Fast Turnaround Times',   desc: 'Get your edited photos and videos within days, not months.' },
-    { title: 'End-to-End Execution',         desc: 'From location scouting to final color grade, we handle the entire process.' },
+    { title: 'In-House Production Team', desc: 'We do not outsource. Our in-house directors, DPs, and editors handle everything.' },
+    { title: 'Specialized UGC Wing', desc: 'We have a dedicated division just for sourcing creators and shooting high-converting UGC.' },
+    { title: 'Cinema-Grade Equipment', desc: 'Shot on top-tier cameras (Sony Cinema Line, RED) with professional lighting and audio.' },
+    { title: 'Fast Turnaround Times', desc: 'Get your edited photos and videos within days, not months.' },
+    { title: 'End-to-End Execution', desc: 'From location scouting to final color grade, we handle the entire process.' },
   ];
 
   const process = [
-    { step: '01', title: 'Pre-Production',   desc: 'Storyboarding, scripting, location scouting, and talent casting.' },
-    { step: '02', title: 'Production',    desc: 'Professional shooting with cinema cameras, lighting, and audio gear.' },
-    { step: '03', title: 'Post-Production',   desc: 'Editing, VFX, color grading, and sound design.' },
-    { step: '04', title: 'Review',      desc: 'Collaborative feedback rounds to ensure the content matches your vision.' },
-    { step: '05', title: 'Delivery',   desc: 'Final high-resolution assets handed over in multiple formats.' },
+    { step: '01', title: 'Pre-Production', desc: 'Storyboarding, scripting, location scouting, and talent casting.' },
+    { step: '02', title: 'Production', desc: 'Professional shooting with cinema cameras, lighting, and audio gear.' },
+    { step: '03', title: 'Post-Production', desc: 'Editing, VFX, color grading, and sound design.' },
+    { step: '04', title: 'Review', desc: 'Collaborative feedback rounds to ensure the content matches your vision.' },
+    { step: '05', title: 'Delivery', desc: 'Final high-resolution assets handed over in multiple formats.' },
   ];
 
 
@@ -104,12 +105,13 @@ export default function PhotographyVideographyPage() {
               <CubesBackground />
             </div>
             <div className="mobile-only" style={{ width: '100%', height: '100%', opacity: 0.7 }}>
-              <video 
-                src="/videos/videography/hero-section-mobileview.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
+              <video
+                src="/videos/videography/hero-section-mobileview.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
@@ -142,26 +144,26 @@ export default function PhotographyVideographyPage() {
               <span>✓ Cinema-Grade Gear</span>
             </div>
           </div>
-{/* ─── TECHNOLOGY MARQUEE ─── */}
-        <section className="tech-marquee-section" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 20, background: 'transparent', borderBottom: 'none', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <div className="tech-marquee-container">
-            <div className="tech-marquee-content">
-              {[...Array(4)].flatMap(() => [
-                { name: "Premiere Pro", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-premiere-pro.png" },
-                { name: "After Effects", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-after-effects.png" },
-                { name: "DaVinci Resolve", icon: "davinciresolve" },
-                { name: "Sony Cinema", icon: "sony" },
-                { name: "RED Digital", icon: "red" },
-                { name: "Lightroom", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-lightroom.png" }
-              ]).map((tech, i) => (
-                <div key={i} className="tech-badge" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <img src={tech.customUrl || `https://cdn.simpleicons.org/${tech.icon}/ffffff`} alt={tech.name} style={{ width: '24px', height: '24px' }} />
-                  <span>{tech.name}</span>
-                </div>
-              ))}
+          {/* ─── TECHNOLOGY MARQUEE ─── */}
+          <section className="tech-marquee-section" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 20, background: 'transparent', borderBottom: 'none', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+            <div className="tech-marquee-container">
+              <div className="tech-marquee-content">
+                {[...Array(4)].flatMap(() => [
+                  { name: "Premiere Pro", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-premiere-pro.png" },
+                  { name: "After Effects", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-after-effects.png" },
+                  { name: "DaVinci Resolve", icon: "davinciresolve" },
+                  { name: "Sony Cinema", icon: "sony" },
+                  { name: "RED Digital", icon: "red" },
+                  { name: "Lightroom", customUrl: "https://img.icons8.com/ios-filled/50/ffffff/adobe-lightroom.png" }
+                ]).map((tech, i) => (
+                  <div key={i} className="tech-badge" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <img src={tech.customUrl || `https://cdn.simpleicons.org/${tech.icon}/ffffff`} alt={tech.name} style={{ width: '24px', height: '24px' }} />
+                    <span>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         </section>
 
@@ -171,13 +173,17 @@ export default function PhotographyVideographyPage() {
             <span className="svc-label">PHOTOGRAPHY</span>
             <h2>Our Photography Work</h2>
           </div>
-          <div className="reveal-zoom reveal-delay-200" style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', padding: '0 1rem', WebkitOverflowScrolling: 'touch' }}>
+          <div style={{ display: 'flex', gap: '2rem', overflowX: 'auto', paddingBottom: '2rem', padding: '0 1rem', WebkitOverflowScrolling: 'touch' }}>
             {photographyPortfolio.map((item: any, i) => (
               <div key={i} style={{ flexShrink: 0, height: '350px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <img 
-                  src={item.img} 
+                <Image
+                  src={item.img}
                   alt={item.title}
-                  style={{ height: '100%', width: 'auto', objectFit: 'contain' }} 
+                  width={800}
+                  height={800}
+                  priority
+                  unoptimized={true}
+                  style={{ height: '100%', width: 'auto', objectFit: 'contain' }}
                 />
               </div>
             ))}
@@ -196,18 +202,19 @@ export default function PhotographyVideographyPage() {
             <span className="svc-label">VIDEOGRAPHY</span>
             <h2>Our Videography Work</h2>
           </div>
-          <div className="social-portfolio-grid reveal-zoom reveal-delay-200">
+          <div className="social-portfolio-grid">
             {videographyPortfolio.map((item: any, i) => (
               <div className="social-portfolio-card" key={i}>
                 <div className="social-portfolio-img" style={{ width: '100%', height: '100%' }}>
-                  <video 
-                    src={item.videoUrl} 
-                    poster={item.img} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  <video
+                    src={item.videoUrl}
+                    poster={item.img}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
               </div>

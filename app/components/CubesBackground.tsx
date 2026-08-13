@@ -18,6 +18,7 @@ interface Cube {
 export default function CubesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animFrameRef = useRef<number>(0);
+  const isVisibleRef = useRef<boolean>(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -108,45 +109,47 @@ export default function CubesBackground() {
     }
 
     function animate() {
-      ctx!.clearRect(0, 0, width, height);
+      if (isVisibleRef.current) {
+        ctx!.clearRect(0, 0, width, height);
 
-      // Draw subtle grid lines in background
-      ctx!.strokeStyle = "rgba(100, 120, 180, 0.04)";
-      ctx!.lineWidth = 1;
-      const gridSize = 80;
-      for (let gx = 0; gx < width; gx += gridSize) {
-        ctx!.beginPath();
-        ctx!.moveTo(gx, 0);
-        ctx!.lineTo(gx, height);
-        ctx!.stroke();
-      }
-      for (let gy = 0; gy < height; gy += gridSize) {
-        ctx!.beginPath();
-        ctx!.moveTo(0, gy);
-        ctx!.lineTo(width, gy);
-        ctx!.stroke();
-      }
-
-      for (const cube of cubes) {
-        // Update position
-        cube.x += cube.speedX;
-        cube.y += cube.speedY;
-        cube.rotation += cube.speedRot;
-        cube.opacity += cube.opacityDelta;
-
-        // Bounce opacity
-        if (cube.opacity > 0.3 || cube.opacity < 0.03) {
-          cube.opacityDelta *= -1;
+        // Draw subtle grid lines in background
+        ctx!.strokeStyle = "rgba(100, 120, 180, 0.04)";
+        ctx!.lineWidth = 1;
+        const gridSize = 80;
+        for (let gx = 0; gx < width; gx += gridSize) {
+          ctx!.beginPath();
+          ctx!.moveTo(gx, 0);
+          ctx!.lineTo(gx, height);
+          ctx!.stroke();
+        }
+        for (let gy = 0; gy < height; gy += gridSize) {
+          ctx!.beginPath();
+          ctx!.moveTo(0, gy);
+          ctx!.lineTo(width, gy);
+          ctx!.stroke();
         }
 
-        // Wrap around edges
-        const margin = cube.size + 60;
-        if (cube.x < -margin) cube.x = width + margin;
-        if (cube.x > width + margin) cube.x = -margin;
-        if (cube.y < -margin) cube.y = height + margin;
-        if (cube.y > height + margin) cube.y = -margin;
+        for (const cube of cubes) {
+          // Update position
+          cube.x += cube.speedX;
+          cube.y += cube.speedY;
+          cube.rotation += cube.speedRot;
+          cube.opacity += cube.opacityDelta;
 
-        drawCube(ctx!, cube.x, cube.y, cube.size, cube.rotation, cube.opacity, cube.hue);
+          // Bounce opacity
+          if (cube.opacity > 0.3 || cube.opacity < 0.03) {
+            cube.opacityDelta *= -1;
+          }
+
+          // Wrap around edges
+          const margin = cube.size + 60;
+          if (cube.x < -margin) cube.x = width + margin;
+          if (cube.x > width + margin) cube.x = -margin;
+          if (cube.y < -margin) cube.y = height + margin;
+          if (cube.y > height + margin) cube.y = -margin;
+
+          drawCube(ctx!, cube.x, cube.y, cube.size, cube.rotation, cube.opacity, cube.hue);
+        }
       }
 
       animFrameRef.current = requestAnimationFrame(animate);
@@ -163,9 +166,18 @@ export default function CubesBackground() {
 
     window.addEventListener("resize", handleResize);
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", handleResize);
+      observer.disconnect();
     };
   }, []);
 
