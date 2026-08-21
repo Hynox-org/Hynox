@@ -280,7 +280,8 @@ export default function ApplyForm({ initialRole }: { initialRole: string }) {
                   className={`btn-send-message ${isSubmitting ? 'loading' : ''}`}
                   disabled={isSubmitting || !turnstileToken}
                 >
-                  {isSubmitting ? <span className="spinner"></span> : 'Submit Application'}
+                  {isSubmitting && <span className="spinner" />}
+                  {isSubmitting ? 'Submitting…' : 'Submit Application'}
                 </button>
               </form>
             )}

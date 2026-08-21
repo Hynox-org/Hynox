@@ -3623,6 +3623,30 @@ body {
   cursor: not-allowed;
 }
 
+/* Sits next to the label rather than replacing it, so the button keeps its
+   height and width while submitting. */
+.btn-send-message .spinner {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-send-message .spinner {
+    animation-duration: 2s;
+  }
+}
+
 /* ── Careers application page ── */
 .apply-page-grid {
   max-width: 680px;

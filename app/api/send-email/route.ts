@@ -104,7 +104,8 @@ export async function POST(req: Request) {
         error: 'Failed to submit. Please try again.',
         // Surfaced outside production so the real cause (usually a missing env
         // var) is visible without shell access to the server logs.
-        ...(process.env.NODE_ENV !== 'production' && {
+        ...((process.env.NODE_ENV !== 'production' ||
+          process.env.VERCEL_ENV === 'preview') && {
           detail: error instanceof Error ? error.message : String(error),
         }),
       },

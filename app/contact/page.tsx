@@ -303,11 +303,8 @@ export default function ContactPage() {
                     className={`btn-send-message ${isSubmitting ? 'loading' : ''}`}
                     disabled={isSubmitting || !turnstileToken}
                   >
-                    {isSubmitting ? (
-                      <span className="spinner"></span>
-                    ) : (
-                      "Send Message"
-                    )}
+                    {isSubmitting && <span className="spinner" />}
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
                   </button>
                 </form>
               )}
