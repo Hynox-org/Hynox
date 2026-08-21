@@ -100,7 +100,14 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error('Contact form submission failed:', error);
     return NextResponse.json(
-      { error: 'Failed to submit. Please try again.' },
+      {
+        error: 'Failed to submit. Please try again.',
+        // Surfaced outside production so the real cause (usually a missing env
+        // var) is visible without shell access to the server logs.
+        ...(process.env.NODE_ENV !== 'production' && {
+          detail: error instanceof Error ? error.message : String(error),
+        }),
+      },
       { status: 500 }
     );
   }
