@@ -132,12 +132,10 @@ export async function POST(req: Request) {
           status: error.status,
           code: error.code,
         }),
-        // Anything else is only detailed outside production.
-        ...(!(error instanceof BrevoError) &&
-          (process.env.NODE_ENV !== 'production' ||
-            process.env.VERCEL_ENV === 'preview') && {
-            detail: error instanceof Error ? error.message : String(error),
-          }),
+        // Anything else is deliberately not echoed: a thrown message can
+        // quote the value that caused it, which for a credential means
+        // serving the credential to whoever submitted the form. The full
+        // error is in the server log instead.
       },
       { status: 500 }
     );

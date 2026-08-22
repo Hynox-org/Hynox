@@ -55,8 +55,11 @@ export async function sendEmail({
   replyTo,
   attachment,
 }: SendEmailOptions): Promise<void> {
-  const apiKey = process.env.BREVO_API_KEY;
-  const sender = process.env.EMAIL_USER;
+  // Keys pasted into a dashboard often arrive wrapped across lines, and a
+  // header value containing a newline makes fetch throw before the request is
+  // ever sent, so strip whitespace rather than fail on a cosmetic difference.
+  const apiKey = process.env.BREVO_API_KEY?.replace(/\s/g, '');
+  const sender = process.env.EMAIL_USER?.trim();
 
   if (!apiKey) throw new Error('BREVO_API_KEY is not configured');
   if (!sender) throw new Error('EMAIL_USER is not configured');
