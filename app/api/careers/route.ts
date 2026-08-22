@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifyTurnstileToken } from '@/app/lib/turnstile';
-import { sendEmail } from '@/app/lib/brevo';
+import { sendEmail, BrevoError } from '@/app/lib/brevo';
 import { appendToSheet } from '@/app/lib/google-sheets';
 import { isValidRoleTitle } from '@/app/lib/careers';
 import {
@@ -160,11 +160,14 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error: 'Failed to submit. Please try again.',
-        // Surfaced outside production so the real cause (usually a missing env
-        // var) is visible without shell access to the server logs.
-        ...((process.env.NODE_ENV !== 'production' ||
-          process.env.VERCEL_ENV === 'preview') && {
-          detail: error instanceof Error ? error.message : String(error),
+        // Brevo's own status and error code name the cause (rejected key,
+        // unverified sender, IP restriction) without echoing any credential.
+        // Nothing else is echoed: a thrown message can quote the value that
+        // caused it, so the full error goes to the server log instead.
+        ...(error instanceof BrevoError && {
+          provider: 'brevo',
+          status: error.status,
+          code: error.code,
         }),
       },
       { status: 500 }
