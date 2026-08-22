@@ -12,8 +12,12 @@ type TurnstileApi = {
       sitekey: string;
       callback: (token: string) => void;
       'expired-callback'?: () => void;
-      'error-callback'?: () => void;
+      /** Returning true hands the error back to Turnstile to retry itself. */
+      'error-callback'?: (code: string) => boolean;
       theme?: 'light' | 'dark' | 'auto';
+      retry?: 'auto' | 'never';
+      'retry-interval'?: number;
+      'refresh-expired'?: 'auto' | 'manual' | 'never';
     }
   ) => string;
   reset: (widgetId: string) => void;
@@ -104,7 +108,18 @@ export default function Turnstile({ onVerify, onExpire, ref }: TurnstileProps) {
           sitekey: siteKey,
           callback: (token) => onVerifyRef.current(token),
           'expired-callback': () => onExpireRef.current?.(),
-          'error-callback': () => onExpireRef.current?.(),
+          // 600010 and its neighbours are transient execution failures —
+          // usually browser storage restrictions or a blocked request — so the
+          // token is cleared and Turnstile is asked to run the challenge again
+          // rather than leaving the form permanently unsubmittable.
+          'error-callback': (code) => {
+            console.warn('Turnstile challenge failed:', code);
+            onExpireRef.current?.();
+            return true;
+          },
+          retry: 'auto',
+          'retry-interval': 2000,
+          'refresh-expired': 'auto',
         });
       })
       .catch((error) => console.error(error));
