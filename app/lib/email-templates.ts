@@ -42,15 +42,24 @@ const PANEL = '#fafafa';
 const FONT =
   "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
 
+/**
+ * Host the email's images are loaded from. Email needs absolute URLs, and the
+ * asset only exists on hosts that have this branch deployed — so a non-production
+ * deployment points this at itself (EMAIL_ASSET_BASE_URL=https://dev.hynox.in)
+ * rather than 404ing against production and falling back to alt text.
+ *
+ * Only assets follow the deployment. Links in the email still go to the public
+ * site below, because that is where the recipient should land.
+ */
+const ASSET_BASE = (
+  process.env.EMAIL_ASSET_BASE_URL || 'https://www.hynox.in'
+).replace(/\/+$/, '');
+
 const COMPANY = {
   name: 'HYNOX',
   site: 'https://www.hynox.in',
-  /**
-   * Absolute and pointed at production on purpose: a preview deployment still
-   * sends real email, and a relative or preview-host URL would break the logo
-   * in the recipient's inbox. Served at 2x the rendered size for retina.
-   */
-  logo: 'https://www.hynox.in/images/hynox-logo-email.png',
+  /** Served at 2x the rendered size so it stays crisp on retina. */
+  logo: `${ASSET_BASE}/images/hynox-logo-email.png`,
   logoWidth: 91,
   logoHeight: 44,
   email: 'thehynoxofficial@gmail.com',
