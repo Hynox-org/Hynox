@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifyTurnstileToken } from '@/app/lib/turnstile';
-import { sendEmail } from '@/app/lib/brevo';
+import { sendEmail, BrevoError, REQUIRED_BREVO_ENV } from '@/app/lib/brevo';
 import { appendToSheet } from '@/app/lib/google-sheets';
 import { serviceLabel } from '@/app/lib/contact-form';
 import {
@@ -8,6 +8,17 @@ import {
   userConfirmationEmail,
   type ContactSubmission,
 } from '@/app/lib/email-templates';
+
+/**
+ * Names of environment variables the submission cannot be delivered without.
+ * Reported by name on failure: the names are not secrets, and a missing one on
+ * the deployment is the most common cause of a failed send.
+ */
+function missingEnv(): string[] {
+  return [...REQUIRED_BREVO_ENV, 'COMPANY_EMAIL'].filter(
+    (name) => !process.env[name]
+  );
+}
 
 function clientIp(req: Request): string | undefined {
   const forwarded = req.headers.get('x-forwarded-for');
@@ -23,6 +34,18 @@ export async function POST(req: Request) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
+      );
+    }
+
+    const missing = missingEnv();
+    if (missing.length > 0) {
+      console.error('Email delivery is not configured. Missing:', missing.join(', '));
+      return NextResponse.json(
+        {
+          error: 'Email service is not configured. Please email us directly.',
+          missing,
+        },
+        { status: 500 }
       );
     }
 
@@ -68,8 +91,7 @@ export async function POST(req: Request) {
       console.error('GOOGLE_SHEET_ID is not configured; skipping Sheets record');
     }
 
-    const companyEmail = process.env.COMPANY_EMAIL;
-    if (!companyEmail) throw new Error('COMPANY_EMAIL is not configured');
+    const companyEmail = process.env.COMPANY_EMAIL as string;
 
     // The team notification is the one email the enquiry cannot survive
     // without, so a failure here fails the request.
@@ -102,12 +124,20 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error: 'Failed to submit. Please try again.',
-        // Surfaced outside production so the real cause (usually a missing env
-        // var) is visible without shell access to the server logs.
-        ...((process.env.NODE_ENV !== 'production' ||
-          process.env.VERCEL_ENV === 'preview') && {
-          detail: error instanceof Error ? error.message : String(error),
+        // Brevo's own status and error code are surfaced everywhere: they name
+        // the cause (rejected key, unverified sender, IP restriction) without
+        // echoing the request or any credential.
+        ...(error instanceof BrevoError && {
+          provider: 'brevo',
+          status: error.status,
+          code: error.code,
         }),
+        // Anything else is only detailed outside production.
+        ...(!(error instanceof BrevoError) &&
+          (process.env.NODE_ENV !== 'production' ||
+            process.env.VERCEL_ENV === 'preview') && {
+            detail: error instanceof Error ? error.message : String(error),
+          }),
       },
       { status: 500 }
     );

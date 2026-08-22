@@ -17,6 +17,33 @@ type SendEmailOptions = {
   attachment?: Attachment[];
 };
 
+/** Env vars sendEmail cannot run without, in the order they are reported. */
+export const REQUIRED_BREVO_ENV = ['BREVO_API_KEY', 'EMAIL_USER'] as const;
+
+/**
+ * A rejection from Brevo's API. Carries the HTTP status and Brevo's own error
+ * code (e.g. "unauthorized", "invalid_parameter") so the cause can be
+ * surfaced to the caller without echoing the whole response body.
+ */
+export class BrevoError extends Error {
+  constructor(
+    readonly status: number,
+    readonly code: string
+  ) {
+    super(`Brevo responded ${status} (${code})`);
+    this.name = 'BrevoError';
+  }
+}
+
+function errorCode(body: string): string {
+  try {
+    const parsed = JSON.parse(body) as { code?: string; message?: string };
+    return parsed.code ?? parsed.message ?? 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
 /**
  * Sends a transactional email through Brevo's HTTP API. Throws on failure so
  * the caller can decide whether a given email is critical to the request.
@@ -53,6 +80,7 @@ export async function sendEmail({
 
   if (!res.ok) {
     const detail = await res.text();
-    throw new Error(`Brevo responded ${res.status}: ${detail}`);
+    console.error(`Brevo rejected the send (${res.status}):`, detail);
+    throw new BrevoError(res.status, errorCode(detail));
   }
 }

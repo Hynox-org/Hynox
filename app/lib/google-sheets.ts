@@ -13,7 +13,7 @@ export type SheetRecord = Record<string, string>;
 function getPrivateKey(): string {
   const key = process.env.GOOGLE_SHEETS_PRIVATE_KEY;
   if (!key) throw new Error('GOOGLE_SHEETS_PRIVATE_KEY is not configured');
-  return key.replace(/\n/g, '\n');
+  return key.replace(/\\n/g, '\n');
 }
 
 async function getAccessToken(): Promise<string> {
