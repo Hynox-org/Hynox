@@ -1,27 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Turnstile, { type TurnstileHandle } from '../components/Turnstile';
+import { SERVICES } from '../lib/contact-form';
+import { countries } from '../lib/countries';
 import { Check, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
 import { sendGAEvent } from '@next/third-parties/google';
 
-const countries = [
-  { name: 'India', code: '+91', flag: '🇮🇳' },
-  { name: 'United States', code: '+1', flag: '🇺🇸' },
-  { name: 'United Kingdom', code: '+44', flag: '🇬🇧' },
-  { name: 'United Arab Emirates', code: '+971', flag: '🇦🇪' },
-  { name: 'Singapore', code: '+65', flag: '🇸🇬' },
-];
-
-const services = [
-  { value: 'web-application', label: 'Web Application' },
-  { value: 'mobile-app', label: 'Mobile App' },
-  { value: 'shopify-store', label: 'Shopify Store' },
-  { value: 'erp-software', label: 'ERP Software' },
-  { value: 'digital-marketing', label: 'Digital Marketing' },
-  { value: 'others', label: 'Others' },
-];
+const services = SERVICES;
 
 export default function ContactPage() {
   const [fullName, setFullName] = useState('');
@@ -32,6 +20,9 @@ export default function ContactPage() {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [submitError, setSubmitError] = useState('');
+  const turnstileRef = useRef<TurnstileHandle>(null);
 
   // Intersection observer for animation triggers
   useEffect(() => {
@@ -62,12 +53,19 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      setSubmitError('Please complete the verification below before submitting.');
+      return;
+    }
+
+    setSubmitError('');
     setIsSubmitting(true);
 
     sendGAEvent('event', 'ads_conversion_Submit_lead_form_1', {
       form_name: 'contact_page',
     });
-    
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -80,7 +78,8 @@ export default function ContactPage() {
           phone: `${country} ${phoneNumber}`,
           service: interestService,
           message,
-          source: 'Contact Page'
+          source: 'Contact Page',
+          turnstileToken,
         }),
       });
 
@@ -92,18 +91,24 @@ export default function ContactPage() {
         setPhoneNumber('');
         setInterestService('web-application');
         setMessage('');
-        
+
         // Auto clear success message after 5 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 5000);
       } else {
-        alert('Failed to send message. Please try again or email us directly.');
+        const data = await response.json().catch(() => ({}));
+        setSubmitError(
+          data.error || 'Failed to send message. Please try again or email us directly.'
+        );
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again.');
+      setSubmitError('An error occurred. Please try again.');
     } finally {
+      // Turnstile tokens are single-use, so clear it for any retry.
+      setTurnstileToken('');
+      turnstileRef.current?.reset();
       setIsSubmitting(false);
     }
   };
@@ -175,7 +180,7 @@ export default function ContactPage() {
             <div className="form-container-clean">
               <div className="form-card-header">
                 <h2>Send us a Message</h2>
-                <p>Fill out the form and we'll get back to you within 24 hours.</p>
+                <p>Fill out the form and we&apos;ll get back to you within 24 hours.</p>
               </div>
 
               {submitSuccess ? (
@@ -277,17 +282,29 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
+                  {/* Cloudflare Turnstile verification */}
+                  <div className="form-group turnstile-group">
+                    <Turnstile
+                      ref={turnstileRef}
+                      onVerify={setTurnstileToken}
+                      onExpire={() => setTurnstileToken('')}
+                    />
+                  </div>
+
+                  {submitError && (
+                    <p className="form-error-message" role="alert">
+                      {submitError}
+                    </p>
+                  )}
+
                   {/* Submit Button */}
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className={`btn-send-message ${isSubmitting ? 'loading' : ''}`}
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !turnstileToken}
                   >
-                    {isSubmitting ? (
-                      <span className="spinner"></span>
-                    ) : (
-                      "Send Message"
-                    )}
+                    {isSubmitting && <span className="spinner" />}
+                    {isSubmitting ? 'Sending…' : 'Send Message'}
                   </button>
                 </form>
               )}
