@@ -108,7 +108,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-center-p reveal-fade-in reveal-delay-200">
-            HYNOX is the leading software development company in Coimbatore, Tamil Nadu. We build fast websites, custom mobile apps, responsive ERP systems, and AI automation to scale your business globally—supporting projects from ₹40K to ₹40L. We are Shopify partners.
+            HYNOX is the leading software development company in Coimbatore, Tamil Nadu. We build fast websites, custom mobile apps, responsive ERP systems, and AI automation to scale your business globally. We are Shopify partners.
           </p>
 
           <div className="hero-center-actions reveal-fade-in reveal-delay-300">
@@ -212,7 +212,7 @@ export default function Home() {
         <div className="services-header reveal-blur">
           <span className="section-subtitle">OUR SERVICES</span>
           <h2>Software &amp; Digital Services in Coimbatore</h2>
-          <p>Custom software development and digital marketing services. Design, development, and marketing — all under one roof.</p>
+          <p style={{ fontSize: '1rem' }}>Custom software development and digital marketing services supporting projects from ₹40K to ₹40L. Design, development, and marketing — all under one roof.</p>
         </div>
 
         <div className="services-category reveal-from-left reveal-delay-100">
