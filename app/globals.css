@@ -650,7 +650,7 @@ body {
   width: 100%;
   padding: 0 2rem;
   /* Move content upward */
-  margin-top: -8rem;
+  margin-top: -12rem;
 }
 
 
@@ -1488,7 +1488,7 @@ body {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  animation: scroll-testimonials 60s linear infinite;
+  animation: scroll-testimonials 20s linear infinite;
   padding: 1rem 0;
 }
 
@@ -1532,6 +1532,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .testimonials-marquee-content {
+    animation-duration: 8s;
+  }
+
   .testimonials-marquee-content .testimonial-card {
     width: 320px;
   }
