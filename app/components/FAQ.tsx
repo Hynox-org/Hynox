@@ -44,7 +44,7 @@ export default function FAQ() {
     <section id="faq" className="faq-split-section">
       <div className="section-header reveal-on-scroll">
         <span className="section-subtitle">FAQ</span>
-        <h2>Got questions? We have answers.</h2>
+        <h2>Got questions? <span style={{ color: "#087F5B" }}>We have answers.</span></h2>
       </div>
 
       <div className="faq-split-container reveal-on-scroll reveal-delay-200">

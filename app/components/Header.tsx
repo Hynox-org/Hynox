@@ -50,7 +50,7 @@ export default function Header() {
             <Bot className="btn-icon" size={14} />
             Voice.ai
           </a>
-          <Link href="/contact" className="btn btn-outline" onClick={closeMobileMenu}>
+          <Link href="/contact" className="btn btn-primary" onClick={closeMobileMenu}>
             Contact
           </Link>
         </div>
@@ -61,7 +61,7 @@ export default function Header() {
           <Bot className="btn-icon" size={14} />
           Voice.ai
         </a>
-        <Link href="/contact" className="btn btn-outline">
+        <Link href="/contact" className="btn btn-primary">
           Contact
         </Link>
       </div>

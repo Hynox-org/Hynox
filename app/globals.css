@@ -836,16 +836,15 @@ body {
 }
 
 .btn-hero-solid {
-  background: #ffffff;
-  color: #0a0a0a;
-  border: 1px solid #ffffff;
+  background: #087F5B !important;
+  color: #ffffff !important;
+  border: 1px solid #087F5B !important;
 }
 
 .btn-hero-solid:hover {
-  background: #e8e8e8;
-  border-color: #e8e8e8;
+  background: #066649;
+  border-color: #066649;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18);
 }
 
 .btn-hero-outline {
@@ -1092,7 +1091,7 @@ body {
 }
 
 .section-subtitle {
-  color: var(--text-muted);
+  color: #087F5B;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1885,13 +1884,13 @@ body {
 }
 
 .cta-btn.primary {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
+  background-color: #087F5B !important;
+  color: #FFFFFF !important;
+  border: none !important;
 }
 
 .cta-btn.primary:hover {
-  background-color: #e5e5e5;
+  background-color: #066649;
   transform: translateY(-2px);
 }
 
@@ -2664,8 +2663,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #ffffff;
-  color: #000000;
+  background: #087F5B;
+  color: #FFFFFF;
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
   font-size: 0.85rem;
@@ -2675,7 +2674,7 @@ body {
 }
 
 .social-portfolio-cta-card .cta-btn:hover {
-  background: #e5e5e5;
+  background: #066649;
   transform: scale(1.05);
 }
 
@@ -3572,7 +3571,7 @@ body {
 }
 
 .checkbox-container input:checked~.checkmark {
-  background-color: #00b865;
+  background-color: #087F5B;
   border-color: #00b865;
 }
 
@@ -3602,7 +3601,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: #00b865;
+  background: #087F5B;
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -6097,4 +6096,17 @@ canvas {
 .svc-hero-badges-bw span {
   color: #f3f4f6 !important;
   font-weight: 500;
+}
+/* specific primary buttons */
+.btn-primary {
+  background: #087F5B !important;
+  color: #ffffff !important;
+  border: 1px solid #087F5B !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 4px !important;
+}
+.btn-primary:hover {
+  background: #066649 !important;
+  border-color: #066649 !important;
+  transform: translateY(-2px);
 }
