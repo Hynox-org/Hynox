@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import FloatingReviewVideo from "./components/FloatingReviewVideo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -244,6 +245,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <FloatingReviewVideo />
         <a
           href="https://wa.me/918870524355"
           className="whatsapp-float-btn"

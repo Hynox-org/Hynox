@@ -520,7 +520,7 @@ body {
 }
 
 .nav-container {
-  margin-left: 12rem;
+  margin-left: 5rem;
   /* Moved further to the right */
 }
 
@@ -6097,16 +6097,283 @@ canvas {
   color: #f3f4f6 !important;
   font-weight: 500;
 }
-/* specific primary buttons */
-.btn-primary {
-  background: #087F5B !important;
-  color: #ffffff !important;
-  border: 1px solid #087F5B !important;
-  padding: 0.5rem 1.25rem !important;
-  border-radius: 4px !important;
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
 }
-.btn-primary:hover {
-  background: #066649 !important;
-  border-color: #066649 !important;
-  transform: translateY(-2px);
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* ── FLOATING REVIEW VIDEO WIDGET (ABOVE WHATSAPP) ── */
+.floating-review-bubble {
+  position: fixed;
+  bottom: calc(2.5rem + 74px);
+  right: 2.5rem;
+  width: 82px;
+  height: 122px;
+  border-radius: 18px;
+  z-index: 9998;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(37, 211, 102, 0.6);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.floating-review-bubble:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 0 3px #25d366;
+}
+
+.floating-review-bubble:hover .floating-review-play-icon {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: rgba(37, 211, 102, 0.85);
+}
+
+.floating-review-media {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  position: relative;
+  background: #000000;
+}
+
+.floating-review-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-review-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+.floating-review-dismiss {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #111827;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.floating-review-dismiss:hover {
+  background: #ef4444;
+  transform: scale(1.15);
+  border-color: #ef4444;
+}
+
+.floating-review-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-review-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 6px #25d366;
+  animation: review-dot-pulse 1.6s infinite;
+}
+
+@keyframes review-dot-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+    box-shadow: 0 0 10px #25d366;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+.floating-review-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.95;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.floating-review-play-icon svg {
+  margin-left: 2px;
+}
+
+/* Modal Backdrop & Card */
+.floating-review-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modal-fade-in 0.2s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.floating-review-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  max-height: 85vh;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  animation: modal-scale-up 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modal-scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.floating-review-modal-header {
+  padding: 0.85rem 1.15rem;
+  background: #0b1120;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.floating-review-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.floating-review-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.floating-review-modal-video-wrap {
+  width: 100%;
+  max-height: 520px;
+  aspect-ratio: 9/16;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.floating-review-modal-footer {
+  padding: 0.85rem 1.15rem;
+  background: #0b1120;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.floating-review-whatsapp-btn {
+  width: 100%;
+  padding: 0.8rem 1.25rem;
+  border-radius: 12px;
+  background: #25d366;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.floating-review-whatsapp-btn:hover {
+  background: #20ba5a;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .floating-review-bubble {
+    bottom: calc(1.5rem + 62px);
+    right: 1.5rem;
+    width: 68px;
+    height: 102px;
+    border-radius: 16px;
+  }
+
+  .floating-review-modal-card {
+    max-width: 320px;
+  }
 }

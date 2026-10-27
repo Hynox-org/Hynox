@@ -38,6 +38,7 @@ export default function Header() {
       <nav className={`nav-container ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul className="nav">
           <li><Link href={getHref('#home')} onClick={closeMobileMenu}>HOME</Link></li>
+          <li><Link href="/about" className={pathname === '/about' ? 'active' : ''} onClick={closeMobileMenu}>ABOUT</Link></li>
           <li><Link href={getHref('#services')} onClick={closeMobileMenu}>SERVICES</Link></li>
           <li><Link href="/works" className={pathname === '/works' ? 'active' : ''} onClick={closeMobileMenu}>WORKS</Link></li>
           <li><Link href="/case-studies" onClick={closeMobileMenu}>CASE STUDIES</Link></li>
