@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import TestimonialVideoSection from "./components/TestimonialVideoSection";
 const CubesBackground = dynamic(() => import("./components/CubesBackground"), { ssr: false });
 import { ArrowRight, ShoppingBag, Factory, Briefcase, Check, Users, MapPin, Zap, MessageSquare, Globe, LifeBuoy } from "lucide-react";
 
@@ -108,7 +109,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-center-p reveal-fade-in reveal-delay-200">
-            HYNOX is the leading software development company in Coimbatore, Tamil Nadu. We build fast websites, custom mobile apps, responsive ERP systems, and AI automation to scale your business globally. We are Shopify partners, supporting projects from ₹40K to ₹40L.
+            HYNOX is the leading software development company in Coimbatore, Tamil Nadu. We build fast websites, custom mobile apps, responsive ERP systems, and AI automation to scale your business globally. We are Shopify partners.
           </p>
 
           <div className="hero-center-actions reveal-fade-in reveal-delay-300">
@@ -174,7 +175,7 @@ export default function Home() {
         <div className="services-category reveal-from-left reveal-delay-100">
           <div className="services-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
 
-            <Link href="/contact" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+            <a href="https://campus.hynox.in/" target="_blank" rel="noopener noreferrer" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <img fetchPriority="high" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Hynox AI Campus" className="service-card-image" />
               <div className="service-card-content">
                 <span className="badge-ai">Platform</span>
@@ -182,17 +183,17 @@ export default function Home() {
                 <p>AI-driven campus management and intelligent learning ecosystem</p>
                 <div className="service-link">Know More <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></div>
               </div>
-            </Link>
+            </a>
 
-            <Link href="/contact" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-              <img fetchPriority="high" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopify Checkout" className="service-card-image" />
+            <a href="https://billdesk.hynox.in/" target="_blank" rel="noopener noreferrer" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+              <img fetchPriority="high" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="BillDesk" className="service-card-image" />
               <div className="service-card-content">
-                <span className="badge-dev">E-Commerce</span>
-                <h4>Shopify Checkout</h4>
-                <p>Seamless, high-converting custom checkout experiences for Shopify</p>
+                <span className="badge-dev" style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)' }}>Billing &amp; POS</span>
+                <h4>BillDesk</h4>
+                <p>Smart, simple billing &amp; management software designed for small cafés, coffee shops, and restaurants</p>
                 <div className="service-link">Know More <ArrowRight size={14} style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }} /></div>
               </div>
-            </Link>
+            </a>
 
             <Link href="/contact" className="service-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
               <img fetchPriority="high" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Healthcare Card System" className="service-card-image" />
@@ -212,7 +213,7 @@ export default function Home() {
         <div className="services-header reveal-blur">
           <span className="section-subtitle">OUR SERVICES</span>
           <h2>Software &amp; Digital Services in Coimbatore</h2>
-          <p style={{ fontSize: '1rem' }}>Custom software development and digital marketing services supporting projects from ₹40K to ₹40L. Design, development, and marketing — all under one roof.</p>
+          <p style={{ fontSize: '1rem' }}>Custom software development and digital marketing services. Design, development, and marketing — all under one roof.</p>
         </div>
 
         <div className="services-category reveal-from-left reveal-delay-100">
@@ -544,6 +545,8 @@ export default function Home() {
       </section>
 
       <FAQ />
+
+      <TestimonialVideoSection theme="light" />
 
       <section id="cta" className="cta-section reveal-zoom">
         <div className="cta-outer-card">
