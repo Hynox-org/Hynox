@@ -515,6 +515,8 @@ export default function Home() {
         </div>
       </section>
 
+      <TestimonialVideoSection theme="light" />
+
       <section id="why-us" className="why-choose-us-section">
         <div className="section-header reveal-flip-x">
           <span className="section-subtitle">WHY HYNOX</span>
@@ -545,8 +547,6 @@ export default function Home() {
       </section>
 
       <FAQ />
-
-      <TestimonialVideoSection theme="light" />
 
       <section id="cta" className="cta-section reveal-zoom">
         <div className="cta-outer-card">
