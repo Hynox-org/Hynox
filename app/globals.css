@@ -836,16 +836,15 @@ body {
 }
 
 .btn-hero-solid {
-  background: #ffffff;
-  color: #0a0a0a;
-  border: 1px solid #ffffff;
+  background: #087F5B !important;
+  color: #ffffff !important;
+  border: 1px solid #087F5B !important;
 }
 
 .btn-hero-solid:hover {
-  background: #e8e8e8;
-  border-color: #e8e8e8;
+  background: #066649;
+  border-color: #066649;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18);
 }
 
 .btn-hero-outline {
@@ -1092,7 +1091,7 @@ body {
 }
 
 .section-subtitle {
-  color: var(--text-muted);
+  color: #087F5B;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -1885,13 +1884,13 @@ body {
 }
 
 .cta-btn.primary {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
+  background-color: #087F5B !important;
+  color: #FFFFFF !important;
+  border: none !important;
 }
 
 .cta-btn.primary:hover {
-  background-color: #e5e5e5;
+  background-color: #066649;
   transform: translateY(-2px);
 }
 
@@ -2664,8 +2663,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #ffffff;
-  color: #000000;
+  background: #087F5B;
+  color: #FFFFFF;
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
   font-size: 0.85rem;
@@ -2675,7 +2674,7 @@ body {
 }
 
 .social-portfolio-cta-card .cta-btn:hover {
-  background: #e5e5e5;
+  background: #066649;
   transform: scale(1.05);
 }
 
@@ -3572,7 +3571,7 @@ body {
 }
 
 .checkbox-container input:checked~.checkmark {
-  background-color: #00b865;
+  background-color: #087F5B;
   border-color: #00b865;
 }
 
@@ -3602,7 +3601,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: #00b865;
+  background: #087F5B;
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -6376,5 +6375,134 @@ canvas {
 
   .floating-review-modal-card {
     max-width: 320px;
+  }
+}
+
+/* ── PHOTOGRAPHY & VIDEOGRAPHY PAGE RESPONSIVE STYLES ── */
+.svc-container-inner {
+  padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.featured-client-showcase {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.featured-client-preview {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0a0a0a;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.quality-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.campaign-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.portfolio-scroll-section {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .quality-pillars-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .featured-client-showcase {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    padding: 1.75rem 1.25rem !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-container-inner {
+    padding: 0 !important;
+  }
+
+  .campaign-needs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+    margin: 1.5rem auto 0 !important;
+  }
+
+  .quality-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .portfolio-scroll-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .portfolio-image-card {
+    flex: 0 0 clamp(260px, 80vw, 360px) !important;
+    width: clamp(260px, 80vw, 360px) !important;
+    height: 300px !important;
+  }
+
+  .portfolio-video-card {
+    flex: 0 0 clamp(220px, 70vw, 260px) !important;
+    width: clamp(220px, 70vw, 260px) !important;
+  }
+
+  .featured-client-showcase {
+    padding: 1.5rem 1.2rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .featured-client-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  .featured-client-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .photo-cta-section {
+    padding: 4rem 1.5rem !important;
   }
 }

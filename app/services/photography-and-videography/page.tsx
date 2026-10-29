@@ -38,6 +38,7 @@ function PortfolioVideo({ videoUrl }: { videoUrl: string }) {
 
   return (
     <div
+      className="portfolio-video-card"
       style={{
         flex: '0 0 280px',
         width: '280px',
@@ -69,6 +70,7 @@ function PortfolioVideo({ videoUrl }: { videoUrl: string }) {
 function PortfolioImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div
+      className="portfolio-image-card"
       style={{
         flex: '0 0 420px',
         width: '420px',
@@ -423,7 +425,7 @@ export default function PhotographyVideographyPage() {
         </section>
 
         {/* ─── 3. PHOTOGRAPHY PORTFOLIO (High Contrast Text & Clean Carousel) ─── */}
-        <section className="svc-section svc-section-alt" id="photography-portfolio" style={{ background: '#f8f9fa' }}>
+        <section className="svc-section svc-section-alt portfolio-scroll-section" id="photography-portfolio" style={{ background: '#f8f9fa' }}>
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', maxWidth: '1200px', margin: '0 auto 1.5rem', padding: '0 1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <span className="svc-label" style={{ color: '#6b7280' }}>OUR PHOTOGRAPHY</span>
@@ -496,6 +498,7 @@ export default function PhotographyVideographyPage() {
               />
             ))}
             <div
+              className="portfolio-image-card"
               style={{
                 flex: '0 0 320px',
                 width: '320px',
@@ -540,7 +543,7 @@ export default function PhotographyVideographyPage() {
         </section>
 
         {/* ─── 4. VIDEOGRAPHY PORTFOLIO (1st: Hynox Works, 2nd: DRG Video, balance two - No Text Overlays) ─── */}
-        <section className="svc-section" id="videography-portfolio">
+        <section className="svc-section portfolio-scroll-section" id="videography-portfolio">
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', maxWidth: '1200px', margin: '0 auto 1.5rem', padding: '0 1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
               <span className="svc-label">OUR VIDEOGRAPHY</span>
@@ -608,6 +611,7 @@ export default function PhotographyVideographyPage() {
               />
             ))}
             <div
+              className="portfolio-video-card"
               style={{
                 flex: '0 0 280px',
                 width: '280px',
@@ -685,14 +689,7 @@ export default function PhotographyVideographyPage() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.5rem',
-            maxWidth: '1200px',
-            margin: '2.5rem auto 0',
-            padding: '0 1.5rem'
-          }} className="reveal-from-left reveal-delay-200">
+          <div className="campaign-needs-grid reveal-from-left reveal-delay-200">
             {campaignNeeds.map((item, i) => (
               <div
                 key={i}
@@ -792,13 +789,9 @@ export default function PhotographyVideographyPage() {
             </p>
           </div>
 
-          <div style={{ maxWidth: '1200px', margin: '2.5rem auto 0', padding: '0 1.5rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="svc-container-inner" style={{ maxWidth: '1200px', margin: '2.5rem auto 0', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {/* 4 Pillars Grid (White Cards with Dark Text) */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '1.25rem'
-            }} className="reveal-zoom reveal-delay-100">
+            <div className="quality-pillars-grid reveal-zoom reveal-delay-100">
               {qualityPillars.map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -842,17 +835,7 @@ export default function PhotographyVideographyPage() {
             </div>
 
             {/* Featured Client Showcase: Team3 Associates */}
-            <div style={{
-              background: '#0f172a',
-              border: '1px solid #1e293b',
-              borderRadius: '24px',
-              padding: '2.5rem',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2.5rem',
-              alignItems: 'center',
-              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.25)'
-            }} className="reveal-from-left reveal-delay-200">
+            <div className="featured-client-showcase reveal-from-left reveal-delay-200">
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(236, 72, 153, 0.15)', border: '1px solid rgba(236, 72, 153, 0.3)', padding: '0.35rem 0.85rem', borderRadius: '30px', marginBottom: '1.25rem' }}>
                   <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f472b6' }} />
@@ -869,12 +852,12 @@ export default function PhotographyVideographyPage() {
                   &ldquo;Watch the client&apos;s own words on Instagram as they share their experience working with Hynox for architectural and commercial video production.&rdquo;
                 </p>
 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
+                <div className="featured-client-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
                   <a
                     href="https://www.instagram.com/reel/DecBeuOSo0i/?cplk=MmI5ZTBrYXF4b2My"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn"
+                    className="btn featured-client-btn"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -902,15 +885,7 @@ export default function PhotographyVideographyPage() {
               </div>
 
               {/* Reel Card Preview */}
-              <div style={{
-                position: 'relative',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                aspectRatio: '16/10',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                background: '#0a0a0a',
-                boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)'
-              }}>
+              <div className="featured-client-preview">
                 <Image
                   src="/images/photography/3.webp"
                   alt="Team3 Associates Architecture"
@@ -964,7 +939,7 @@ export default function PhotographyVideographyPage() {
             </p>
           </div>
 
-          <div style={{ maxWidth: '850px', margin: '2.5rem auto 0', padding: '0 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }} className="reveal-from-left reveal-delay-200">
+          <div className="svc-container-inner reveal-from-left reveal-delay-200" style={{ maxWidth: '850px', margin: '2.5rem auto 0', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
             {faqs.map((faq, i) => {
               const isOpen = openFaqIndex === i;
               return (
@@ -1033,6 +1008,7 @@ export default function PhotographyVideographyPage() {
         {/* ─── 11. CTA SECTION (WHITE BACKGROUND AS REQUESTED) ─── */}
         <section
           id="cta"
+          className="photo-cta-section"
           style={{
             padding: '6rem 1.5rem',
             background: '#ffffff',

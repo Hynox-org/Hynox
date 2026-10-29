@@ -105,7 +105,7 @@ export default function Home() {
           </span>
 
           <h1 className="hero-center-h1 reveal-fade-in reveal-delay-100">
-            Custom Software, Web &amp;<br className="hidden md:block" /> App Development in Coimbatore
+            <span style={{ color: "#087F5B" }}>Custom Software</span>, Web &amp;<br className="hidden md:block" /> <span style={{ color: "#087F5B" }}>App Development</span> in Coimbatore
           </h1>
 
           <p className="hero-center-p reveal-fade-in reveal-delay-200">
@@ -130,7 +130,7 @@ export default function Home() {
 
       <section className="global-reach">
         <span className="section-subtitle reveal-blur">GLOBAL REACH</span>
-        <h2 className="reveal-on-scroll">Delivering from Coimbatore to the world</h2>
+        <h2 className="reveal-on-scroll">Delivering from <span style={{ color: "#087F5B" }}>Coimbatore to the world</span></h2>
 
         <div className="cards-grid">
           <div className="reach-card reveal-from-left reveal-delay-100">
@@ -168,7 +168,7 @@ export default function Home() {
       <section id="products" className="services-section" style={{ paddingBottom: '2rem' }}>
         <div className="services-header reveal-blur">
           <span className="section-subtitle">OUR PRODUCTS</span>
-          <h2>Digital Products & Platforms</h2>
+          <h2><span style={{ color: "#087F5B" }}>Digital Products</span> & Platforms</h2>
           <p>Explore our proprietary systems built for modern businesses and institutions.</p>
         </div>
 
@@ -318,7 +318,7 @@ export default function Home() {
       <section id="industries" className="business-types-section">
         <div className="section-header reveal-on-scroll" style={{ textAlign: 'left' }}>
           <span className="section-subtitle">CORE SOLUTIONS</span>
-          <h2>Transforming Businesses Across Industries</h2>
+          <h2><span style={{ color: "#087F5B" }}>Transforming Businesses</span> Across Industries</h2>
         </div>
 
         <div className="business-grid reveal-zoom reveal-delay-200">
@@ -359,7 +359,7 @@ export default function Home() {
       <section id="work" className="our-work-section">
         <div className="section-header reveal-flip-x">
           <span className="section-subtitle">OUR WORK</span>
-          <h2>Real projects. Real results.</h2>
+          <h2>Real projects. <span style={{ color: "#087F5B" }}>Real results.</span></h2>
         </div>
 
         <div className="work-marquee-wrapper reveal-from-left reveal-delay-200">
@@ -410,7 +410,7 @@ export default function Home() {
       <section id="clients" className="clients-testimonials-section">
         <div className="section-header reveal-blur">
           <span className="section-subtitle">OUR CLIENTS</span>
-          <h2>Businesses that trust us</h2>
+          <h2>Businesses that <span style={{ color: "#087F5B" }}>trust us</span></h2>
         </div>
 
         <div className="clients-marquee-wrapper reveal-zoom reveal-delay-200">
@@ -515,10 +515,12 @@ export default function Home() {
         </div>
       </section>
 
+      <TestimonialVideoSection theme="light" />
+
       <section id="why-us" className="why-choose-us-section">
         <div className="section-header reveal-flip-x">
           <span className="section-subtitle">WHY HYNOX</span>
-          <h2>Software Engineers &amp; Marketers in Coimbatore</h2>
+          <h2><span style={{ color: "#087F5B" }}>Software Engineers &amp; Marketers</span> in Coimbatore</h2>
         </div>
 
         <div className="features-bento-grid reveal-on-scroll reveal-delay-200">
@@ -546,12 +548,10 @@ export default function Home() {
 
       <FAQ />
 
-      <TestimonialVideoSection theme="light" />
-
       <section id="cta" className="cta-section reveal-zoom">
         <div className="cta-outer-card">
           <div className="cta-card">
-            <h2>Ready to build something?</h2>
+            <h2>Ready to <span style={{ color: "#087F5B" }}>build something?</span></h2>
             <p className="cta-subtitle">Tell us what you need — we'll get back to you within 24 hours.</p>
 
             <div className="cta-buttons">
