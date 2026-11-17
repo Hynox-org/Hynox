@@ -155,26 +155,6 @@ export const roles: Role[] = [
     ]
   },
   {
-    title: 'Cloud Security Intern',
-    desc: 'Join our cybersecurity team to gain practical experience in cloud security. You\'ll assist in implementing security measures, conducting vulnerability assessments, and monitoring cloud environments.',
-    duration: '6 months',
-    location: 'Hybrid',
-    type: 'Internship',
-    stipend: 'Performance-based',
-    requirements: [
-      'Basic understanding of cloud platforms (AWS, Google Cloud, or Azure)',
-      'Familiarity with security principles, networking, and firewalls',
-      'Knowledge of vulnerability scanners, pen-testing tools, or threat models',
-      'Eager interest in cybersecurity standards and certifications'
-    ],
-    responsibilities: [
-      'Monitor cloud network activity for security compliance and anomalies',
-      'Conduct scheduled vulnerability scans and draft threat reports',
-      'Configure and review access controls, security groups, and cloud IAM roles',
-      'Research the latest cybersecurity threats and suggest improvements'
-    ]
-  },
-  {
     title: 'Business Development Executive (Internship)',
     desc: 'Kickstart your career in tech sales. You\'ll learn to identify new business opportunities, generate B2B leads, and assist in closing deals while understanding the software and digital marketing landscape.',
     duration: '6 Months',
@@ -195,23 +175,103 @@ export const roles: Role[] = [
     ]
   },
   {
-    title: 'Business Development Executive (Full-Time)',
-    desc: 'Drive revenue growth by building strong client relationships, identifying high-value B2B opportunities, and closing deals. Manage the entire sales cycle from lead generation to successful project kickoff.',
+    title: 'Lead Generation Executive',
+    desc: 'Identify and qualify potential business prospects, build targeted B2B contact lists, and initiate outbound communication to generate qualified sales opportunities for our tech and marketing solutions.',
     duration: 'Full-time',
     location: 'Hybrid',
     type: 'Full-time',
     stipend: 'Competitive Salary + Performance Incentives',
     requirements: [
-      'Proven track record in sales, business development, or client relationship management',
-      'Strong understanding of IT services, custom software, and digital marketing',
-      'Excellent negotiation, communication, and presentation skills',
-      'Ability to independently manage the sales pipeline and meet targets'
+      'Any Degree / Diploma in any discipline',
+      'Good communication skills (verbal and written)',
+      'Familiarity with online research, LinkedIn, and lead sourcing channels',
+      'Self-motivated with strong follow-up and organizational abilities'
+    ],
+    responsibilities: [
+      'Conduct market research to identify potential B2B clients and key decision-makers',
+      'Build and maintain verified prospect databases and lead pipelines',
+      'Initiate outreach via email, LinkedIn, and phone to introduce Hynox services',
+      'Qualify inbound and outbound leads and schedule discovery calls for the sales team'
+    ]
+  },
+  {
+    title: 'Content Creator',
+    desc: 'Produce engaging visual, video, and written content for brand campaigns, social media channels, and client marketing initiatives that capture attention and drive engagement.',
+    duration: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time',
+    stipend: 'Competitive Salary',
+    requirements: [
+      'Visual Communication / Mass Communication or Any Degree',
+      'Creative skills and a strong portfolio showcasing visual, graphic, or video content',
+      'Hands-on familiarity with editing tools (Premiere Pro, CapCut, Canva, Photoshop) and camera handling',
+      'Strong pulse on social media trends (Instagram Reels, YouTube Shorts, LinkedIn)'
+    ],
+    responsibilities: [
+      'Conceptualize, script, film, and edit engaging short-form video content and social media assets',
+      'Collaborate with the marketing team on creative campaign ideas, UGC videos, and client shoots',
+      'Maintain brand consistency and aesthetic quality across all digital platforms',
+      'Track trend patterns and post analytics to continually improve content performance'
+    ]
+  },
+  {
+    title: 'Digital Marketing Executive',
+    desc: 'Plan and execute high-performing multi-channel digital campaigns, optimize paid advertising across Meta and Google, and drive measurable customer acquisition and brand growth.',
+    duration: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time',
+    stipend: 'Competitive Salary + Performance Incentives',
+    requirements: [
+      'Any Degree / Diploma in any discipline',
+      'Digital marketing knowledge across paid ads, SEO, and social channels',
+      'Understanding of analytics tools (Google Analytics, Meta Business Suite, Search Console)',
+      'Strong analytical mindset and good communication skills'
+    ],
+    responsibilities: [
+      'Manage and optimize paid ad campaigns on Meta Ads and Google Ads to maximize ROAS',
+      'Execute SEO strategies and content optimization to grow organic website traffic',
+      'Monitor campaign metrics, track conversion funnels, and prepare analytical reports',
+      'Collaborate with designers and content creators to build high-converting ad creatives'
+    ]
+  },
+  {
+    title: 'Business Development Executive (BDE)',
+    desc: 'Drive revenue growth by building strong client relationships, identifying high-value B2B opportunities, and pitching custom software and digital solutions from lead qualification to deal closure.',
+    duration: 'Full-time',
+    location: 'Hybrid',
+    type: 'Full-time',
+    stipend: 'Competitive Salary + Performance Incentives',
+    requirements: [
+      'Any Degree / Diploma in any discipline',
+      'Communication and convincing skills (verbal, presentation, and negotiation)',
+      'Basic understanding of IT services, custom software, and digital marketing offerings',
+      'Goal-oriented mindset with the ability to manage customer relationships effectively'
     ],
     responsibilities: [
       'Identify and convert high-potential B2B clients in targeted industries',
-      'Conduct professional service demonstrations and handle complex objections',
+      'Conduct professional service demonstrations and handle complex client objections',
       'Negotiate terms, prepare detailed service contracts, and close sales',
-      'Coordinate with technical teams to ensure seamless client onboarding'
+      'Coordinate with technical and creative teams to ensure seamless client onboarding'
+    ]
+  },
+  {
+    title: 'Presenter (Male & Female)',
+    desc: 'Be the on-screen face and voice of Hynox and our brand partners. Present engaging social media reels, product walkthroughs, brand stories, and client showcases with energy and confidence.',
+    duration: 'Full-time',
+    location: 'On-site / Hybrid',
+    type: 'Full-time',
+    stipend: 'Competitive Salary',
+    requirements: [
+      'Any Degree in any discipline',
+      'Good communication skills in Tamil and English',
+      'High confidence and excellent on-camera presence',
+      'Expressive body language and ability to deliver scripts naturally'
+    ],
+    responsibilities: [
+      'Host and present short-form video reels, shorts, product explainers, and advertisements',
+      'Collaborate with the creative team during scripting and brainstorming sessions',
+      'Participate in on-location and studio shoots for client and brand campaigns',
+      'Maintain an engaging, authentic presentation style aligned with brand guidelines'
     ]
   },
   {
@@ -238,5 +298,5 @@ export const roles: Role[] = [
 
 /** Guards against an application arriving for a role that no longer exists. */
 export function isValidRoleTitle(title: string | undefined): boolean {
-  return !!title && roles.some((role) => role.title === title);
+  return !!title && (roles.some((role) => role.title === title) || title === 'Business Development Executive (Full-Time)');
 }
